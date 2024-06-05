@@ -15,6 +15,7 @@ const mongoDbConnection = process.env.MONGODBCONNECTION
 
 app.use(express.json())
 
+// MONGODBCONNECTION = mongodb+srv://ismail:hqOjpxEkT2orSvRK@cluster0.ccwg76h.mongodb.net/
 mongoose.connect(mongoDbConnection)
     .then(() => console.log('mongoDb connected successfully'))
     .catch((err) => console.log('Error, db not connected', err))
