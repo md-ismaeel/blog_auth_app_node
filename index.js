@@ -9,13 +9,12 @@ const authMiddleware = require('./MIddleware/authMiddleware')
 
 const app = express();
 
-const PORT = 10000;
+const port = process.env.PORT;
 const mongoDbConnection = process.env.MONGODBCONNECTION
 
 
 app.use(express.json())
 
-// MONGODBCONNECTION = mongodb+srv://ismail:hqOjpxEkT2orSvRK@cluster0.ccwg76h.mongodb.net/
 mongoose.connect(mongoDbConnection)
     .then(() => console.log('mongoDb connected successfully'))
     .catch((err) => console.log('Error, db not connected', err))
@@ -31,4 +30,4 @@ app.use('/*', (req, res) => {
 })
 
 
-app.listen(PORT, () => console.log(`Server is up and running on Port ${PORT}`))
+app.listen(port, () => console.log(`Server is up and running on port ${port}`))

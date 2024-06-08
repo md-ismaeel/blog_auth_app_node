@@ -1,13 +1,14 @@
 const jwt = require('jsonwebtoken');
+require('dotenv').config()
 
-const authModel = require('../Model/model')
+const authModel = require('../Model/model.auth')
 
-const jwtKey = 'MY_JWT_KEY_ISMAIL';
+const jwtKey = process.env.JTWKEY;
 
 const validateUsers = async (req, res, next) => {
     const headers = req.headers;
     const tokenFromHeaders = headers.authorization.split(" ")[1];
-    console.log(tokenFromHeaders);
+    // console.log(tokenFromHeaders);
     /**
      * Points to be validated in token
      * 1. Token should be present
@@ -35,7 +36,7 @@ const validateUsers = async (req, res, next) => {
 
     // //3
     const tokenData = jwt.decode(tokenFromHeaders);
-    console.log(tokenData);
+    // console.log(tokenData);
 
     const tokenExp = tokenData.exp;
     const current = Math.ceil(new Date().getTime() / 1000);

@@ -1,8 +1,9 @@
-const authModel = require('../Model/model');
+const authModel = require('../Model/model.auth');
 const bcrypt = require('bcrypt');
+require('dotenv').config()
 
 const jwt = require('jsonwebtoken');
-const jwtKey = 'MY_JWT_KEY_ISMAIL';
+const jwtKey = process.env.JTWKEY;
 
 
 const signUp = async (req, res) => {
