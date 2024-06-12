@@ -15,10 +15,9 @@ const app = express();
 
 const port = process.env.PORT || 10000;
 const mongoDbConnection = process.env.MONGODBCONNECTION;
-const atlasUser = process.env.USER;
-const atlasPassword = process.env.PASSWORD;
 
-if (!mongoDbConnection || !atlasUser || !atlasPassword) {
+
+if (!mongoDbConnection) {
     throw new Error("MongoDB connection details are not set in .env file");
 }
 
