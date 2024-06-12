@@ -38,7 +38,7 @@ const limiter = rateLimit({
         errorHandler: console.error.bind(null, "rate-limit-mongo"),
     }),
     windowMs: windowMs,
-    max: 4, // Limit each IP to 4 requests per windowMs
+    max: 10, // Limit each IP to 4 requests per windowMs
     message: "Too many requests from this IP, please try again after 30 minutes"
 });
 
