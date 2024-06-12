@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
-const authModel = require('../Model/model.auth')
-
+const authModel = require('../Model/model.auth');
 const passport = require('passport');
 
 const JwtStrategy = require('passport-jwt').Strategy,
